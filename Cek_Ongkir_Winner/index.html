@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>JNW</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+    <div class="kotak-ongkir">
+        <h1>Cek Tarif Pengiriman</h1>
+        <p>Pilih wilayah tujuan pengiriman paket:</p>
+
+        <select id="tujuan">
+            <option value="dalam_kota">Dalam Kota (Yogyakarta)</option>
+            <option value="luar_kota">Luar Kota (Pulau Jawa)</option>
+            <option value="luar_pulau">Luar Pulau Jawa</option>
+             <option value="Papua">Papua</option>
+            </select>
+            <br><br>
+                
+                <button onclick="cekOngkir()">
+                    Cek Tarif
+                </button>
+
+                <h2 id="hasilOngkir">
+                    SIlakan pilih tujuan pengiriman.
+                </h2>
+        </div>
+        <script>
+            function cekOngkir() {
+                let wilayah =
+                document.getElementById("tujuan").value;
+                let infoTarif = "";
+                if (wilayah == "dalam_kota"){
+                    infoTarif="Tarif: Rp 10.000 (Estimasi 1 hari)";
+                }
+                else if (wilayah == "luar_kota"){
+                    infoTarif = "Tarif: Rp 20.000 (Estimasi2-3hari)"
+                }
+                else if (wilayah == "luar_pulau"){
+                    infoTarif = "Tarif: Rp 45.000(Estimasi 4-7hari)";
+                
+                }
+                else if (wilayah == "Papua"){
+                    infoTarif = "Tarif: Rp 60.000(Estimasi 5-8hari)";
+                }
+
+            document.getElementById("hasilOngkir").innerText= infoTarif;
+            }
+        </script>
+    </body>
+</html>
